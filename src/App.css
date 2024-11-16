@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-.content{
-  min-height: calc(95vh - 100px);
-}
-
 body{
   background-color: lightgray;
 }
