@@ -38,7 +38,7 @@ var catalog = [
         "title": "Tomato",
         "category": "Vegetable",
         "price": 10.11,
-        "image":"https://www.cylonies.com/storage/vegetables/tomato/untitled-1-540x600.jpg",
+        "image":"https://www.kingsseeds.co.nz/cdn/shop/products/V8332-1.png?v=1688022712",
         "_id":"77723"
     },
     {
@@ -69,7 +69,9 @@ var catalog = [
         "image":"https://www.veggycation.com.au/siteassets/veggycationvegetable/garlic.jpg",
         "_id":"64435"
     }
-]
+];
+
+var categories = ['Fruit', 'Vegetable']
 
 class DataService {
     getProducts() {
@@ -77,6 +79,13 @@ class DataService {
 
         // hardcode values
         return catalog;
+    }
+
+    getCategories(){
+        // todo: call the server
+
+        // hardcoded values
+        return categories;
     }
 }
 

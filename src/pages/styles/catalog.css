@@ -4,3 +4,11 @@
     justify-content: center;
     background-color: rgba(235, 243, 241, 0.479);
 }
+
+.content h1{
+    text-decoration: underline;
+}
+
+.content .filters button{
+    margin-right: 6px;
+}

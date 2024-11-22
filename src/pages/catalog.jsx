@@ -5,10 +5,13 @@ import dataService from "../services/dataService";
 
 function Catalog(){
     const [catalog, setCatalog] = useState([])
+    const [categories, setCategories] = useState([])
 
     function loadData() {
         let productList = dataService.getProducts();
+        let categoriesList = dataService.getCategories();
         setCatalog(productList);
+        setCategories(categoriesList);
     }
 
     useEffect(function() {
@@ -21,19 +24,16 @@ function Catalog(){
     return(
         <div className='content'>
             <div>
-                <h1>This is where the catalog it's going to be</h1>
+                <h1>Food Catalog</h1>
             </div>
+
+            <div className="filters">
+                {categories.map(cate => <button className="btn btn-outline-primary">{cate}</button>)}
+            </div>
+            {/* map the categories into buttons */}
+
             <div>
-                <Product data={catalog[0]}></Product>
-                <Product data={catalog[1]}></Product>
-                <Product data={catalog[2]}></Product>
-                <Product data={catalog[3]}></Product>
-                <Product data={catalog[4]}></Product>
-                <Product data={catalog[5]}></Product>
-                <Product data={catalog[6]}></Product>
-                <Product data={catalog[7]}></Product>
-                <Product data={catalog[8]}></Product>
-                <Product data={catalog[9]}></Product>
+                {catalog.map(prod => <Product data={prod}></Product>)}
             </div>
         </div>
     );

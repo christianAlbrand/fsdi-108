@@ -1,0 +1,80 @@
+.admin{
+    background-color: aliceblue;
+    padding: 30px;
+}
+
+.admin .parent{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.admin .parent .products{
+    flex: 3;
+    max-width: 50%;
+}
+
+
+.admin .parent .coupons{
+    flex: 2;
+}
+
+.admin .parent .products .products-container{
+    display: flex;
+}
+
+.admin .parent .products .products-container .products-container-div{
+    width: 99%;
+}
+
+.admin .parent .products .products-container .img-create-product img{
+    width: 100%;
+    margin-top: 50%;
+}
+
+.admin .parent .products .products-container .products-container-div button{
+    margin-left: 250px;
+}
+
+.admin .parent .products .products-container .img-create-product{
+    max-width: 70%;
+    height: 100%;
+    margin: auto;
+}
+
+
+.admin .parent .coupons-container{
+    display: flex;
+}
+
+
+.admin .parent .form{
+    border: 1px solid #929292;
+    border-radius: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+    margin: 0 20px;
+    text-align: left;
+}
+
+.admin .parent .form h3{
+    color: darkcyan;
+    text-align: center;
+    padding: 12px;
+}
+
+.admin .parent .products input{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.admin .parent .products label{
+    margin-left: 100px;
+}
+
+.admin .parent .form .btn-container{
+    text-align: center;
+}
