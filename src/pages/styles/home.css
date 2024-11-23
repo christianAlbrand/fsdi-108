@@ -1,0 +1,60 @@
+
+
+.home h1, .home h2{
+    text-align: center;
+    color: darkcyan;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 50px;
+}
+
+.home .relative {
+    position: relative;
+}
+
+.home .over-img-txt{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 6px;
+    width: 450px;
+    padding: 30px 20px;
+    top: 100px;
+    left: 80px;
+}
+
+.home .over-img-welcome{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 6px;
+    border: 1px solid green;
+    width: 400px;
+    padding: 30px 20px;
+    top: 440px;
+    left: 780px;
+}
+
+.home .welcome-p-linkBtn-container{
+    margin-top: 230px;
+    padding-left: 30px;
+}
+
+.home .catalog-home-description{
+    padding: 10px;
+    display: flex;
+}
+
+.home .catalog-home-description .catalog-img{
+    width: 30%;
+    margin-left: 300px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.home .main-img{
+    width: 100%;
+}
+
+.home p{
+    font-weight: bold;
+    color: darkcyan;
+    font-size: larger;
+}

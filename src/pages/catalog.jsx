@@ -22,7 +22,7 @@ function Catalog(){
     if(!catalog.length) return "Loading...";
 
     return(
-        <div className='content'>
+        <div className='content page'>
             <div>
                 <h1>Food Catalog</h1>
             </div>

@@ -11,8 +11,8 @@ function About(){
 
     return(
         <div className="about">
-            <h3>About us</h3>
-            <div className="box">
+            <div className="box page">
+                <h3>About us</h3>
                 <h2>Christian Albrand Aguirre</h2>
                 {visibleEmail ? <h5>christian.albrandaguirre@cesunbc.edu.mx</h5> : <label>Click the button to see my email</label>}
                 <br/>

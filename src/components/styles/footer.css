@@ -1,5 +1,7 @@
-.footer_container{
-    background-color: aliceblue;
+.footer{
+    background-color: rgb(207, 207, 207);
     display: flex;
     justify-content: center;
+    padding: 20px;
+    font-weight: bolder;
 }
