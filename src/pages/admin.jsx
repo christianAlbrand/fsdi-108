@@ -1,7 +1,59 @@
+import { useState } from "react";
 import "./styles/admin.css";
 
 
 function Admin(){
+    const [coupon, setCoupon] = useState({
+        code:'', //not required
+        discount:''
+    });
+    const [product, setProduct] = useState({
+        title: "",
+        vategory: "",
+        image: "",
+        price: ""
+    })
+
+
+    function handleCouponInput(e){
+        const val = e.target.value;
+        const name = e.target.name;
+
+        let copy = {...coupon}
+
+        if(name == "discount"){
+            copy.discount = val;
+        }else{
+            copy.code = val;
+        }
+
+        setCoupon(copy);
+    }
+
+    function saveCoupon(){
+        console.log(coupon);
+    }
+
+    function handleProductInput(e){
+        const val = e.target.value;
+        const name = e.target.name;
+
+        console.log(name, val);
+
+        let copy = {...product};
+        copy[name] = val;
+        setProduct(copy);
+    }
+
+    function saveProduct(){
+        console.log(product)
+    }
+
+    //create a handleProductInput fn
+    //should get the name and the val
+    //should console log them
+    //set the name and onChange to Product from input fields
+
     return(
         <div className="admin page">
             <h1>Store Administration</h1>
@@ -12,22 +64,22 @@ function Admin(){
                         <div className="products-container-div">
                             <div className="mb-3">
                                 <label className="form-label">Title</label>
-                                <input type="text" className="form-control" />
+                                <input type="text" className="form-control" onBlur={handleProductInput} name="title"/>
                             </div>
                             <div className="mb-3">
                                 <label className="form-label">Category</label>
-                                <input type="text" className="form-control" />
+                                <input type="text" className="form-control" onBlur={handleProductInput} name="category"/>
                             </div>
                             <div className="mb-3">
                                 <label className="form-label">Image</label>
-                                <input type="image" className="form-control" />
+                                <input type="image" className="form-control" onBlur={handleProductInput} name="image"/>
                             </div>
                             <div className="mb-3">
                                 <label className="form-label">Price</label>
-                                <input type="number" className="form-control" />
+                                <input type="number" className="form-control" onBlur={handleProductInput} name="price"/>
                             </div>
                             <div className="mb-5">
-                                <button className="btn btn-outline-dark"> Save Product </button>
+                                <button onClick={saveProduct} className="btn btn-outline-dark"> Save Product </button>
                             </div>
                         </div>
                         <div className="img-create-products-container">
@@ -42,16 +94,16 @@ function Admin(){
                         <h3>Create Coupons</h3>
                         <div className="mb-3">
                             <label className="form-label">Code</label>
-                            <input type="text" className="form-control" />
+                            <input type="text" className="form-control" onBlur={handleCouponInput} name="code"/>
                         </div>
 
                         <div className="mb-3">
                             <label className="form-label">Discount</label>
-                            <input type="number" className="form-control" />
+                            <input type="number" className="form-control" onBlur={handleCouponInput} name="discount"/>
                         </div>
 
                         <div className="mb-3 btn-container">
-                            <button className="btn btn-outline-dark">Save Coupon</button>
+                            <button onClick={saveCoupon} className="btn btn-outline-dark">Save Coupon</button>
                         </div>
                     </div>
                 </div>
