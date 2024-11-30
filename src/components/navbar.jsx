@@ -28,6 +28,9 @@ function Navbar(){
                         <li class="nav-item">
                             <Link class="nav-link active" aria-current="page" to="/about">About</Link>
                         </li>
+                        <li className="navitem">
+                            <Link class="nav-link active" aria-current="page" to="/list">Shopping List</Link>
+                        </li>
                     </ul>
                     <div class="d-flex">
                         <div class="btn btn-outline-dark me-3">
