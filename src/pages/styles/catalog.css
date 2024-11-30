@@ -5,9 +5,26 @@
 }
 
 .content h1{
-    text-decoration: underline;
+    font-family: Cursive;
+    color: black;
+    font-weight: 600;
 }
 
 .content .filters button{
     margin-right: 6px;
+}
+.content, .content .page{
+    background-image: url("../../../public/images/fruit-4105723_960_720.webp");
+    background-size:auto;
+    background-attachment: fixed;
+    padding-top: 10px;
+}
+
+.content .border-header-buttons{
+    background: linear-gradient(0.25turn, #3A9D23, #F5FBEF, #FF8C42);
+    border-radius: 25px;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5px;
 }

@@ -3,6 +3,7 @@ import Product from "../components/Product";
 import { useEffect, useState } from "react";
 import dataService from "../services/dataService";
 
+
 function Catalog(){
     const [catalog, setCatalog] = useState([])
     const [categories, setCategories] = useState([])
@@ -33,17 +34,18 @@ function Catalog(){
 
     return(
         <div className='content page'>
-            <div>
-                <h1>Food Catalog</h1>
+            <div className="border-header-buttons">
+                <div>
+                    <h1>Food Catalog</h1>
+                </div>
+                <div className="filters">
+                    <button className="btn btn-sm btn-success" onClick={clearFilter}>Show All</button>
+                    {categories.map(cate => <button onClick={() => onCategorySelected(cate)} key={cate} className="btn btn-primary">{cate}</button>)}
+                </div>
+                {/* map the categories into buttons */}
             </div>
 
-            <div className="filters">
-                <button className="btn btn-sm btn-outline-success" onClick={clearFilter}>Show All</button>
-                {categories.map(cate => <button onClick={() => onCategorySelected(cate)} key={cate} className="btn btn-outline-primary">{cate}</button>)}
-            </div>
-            {/* map the categories into buttons */}
-
-            <div>
+            <div className="page">
                 {catalog
                     .filter(prod => !selectedCategory || prod.category === selectedCategory)
                     .map(prod => <Product data={prod} key={prod._id}></Product>)}
