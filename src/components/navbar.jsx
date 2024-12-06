@@ -3,10 +3,23 @@ import "./styles/navbar.css"
 
 import { Link } from "react-router-dom";
 import GlobalContext from "../context/globalContext";
+import { Toast } from "bootstrap";
 
 function Navbar(){
 
     const user = useContext(GlobalContext).user;
+    const cart = useContext(GlobalContext).cart;
+
+    function getProdCount(){
+        let total = 0;
+        for (let i = 0; i < cart.length; i++) {
+            let prod = cart[i];
+            total += prod.quantity;
+        }
+
+        return total;
+    }
+
     return (
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
@@ -34,9 +47,11 @@ function Navbar(){
                     </ul>
                     <div class="d-flex">
                         <div class="btn btn-outline-dark me-3">
-                            {user.id} : {user.name}
+                            {user.name}
                         </div>
-                        <Link class="btn btn-success me-2" to="/cart">View cart</Link>
+                        <Link class="btn btn-success me-2" to="/cart" >
+                        <span class="badge text-bg-warning me-2">{getProdCount()} </span>
+                        View cart</Link>
                     </div>
                 </div>
             </div>
