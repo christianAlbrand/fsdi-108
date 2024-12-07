@@ -3,6 +3,9 @@ import "./styles/admin.css";
 
 
 function Admin(){
+    const [allCoupons, setAllCoupons] = useState([]);
+    const [allProducts, setAllProducts] = useState([]);
+
     const [coupon, setCoupon] = useState({
         code:'', //not required
         discount:''
@@ -31,7 +34,9 @@ function Admin(){
     }
 
     function saveCoupon(){
-        console.log(coupon);
+        var copy = [...allCoupons];
+        copy.push(coupon);
+        setAllCoupons(copy);
     }
 
     function handleProductInput(e){
@@ -46,8 +51,11 @@ function Admin(){
     }
 
     function saveProduct(){
-        console.log(product)
+        var copy = [...allProducts];
+        copy.push(product);
+        setAllProducts(copy);
     }
+
 
     //create a handleProductInput fn
     //should get the name and the val
@@ -72,7 +80,7 @@ function Admin(){
                             </div>
                             <div className="mb-3">
                                 <label className="form-label">Image</label>
-                                <input type="image" className="form-control" onBlur={handleProductInput} name="image"/>
+                                <input type="text" className="form-control" onBlur={handleProductInput} name="image"/>
                             </div>
                             <div className="mb-3">
                                 <label className="form-label">Price</label>
@@ -80,6 +88,15 @@ function Admin(){
                             </div>
                             <div className="mb-5">
                                 <button onClick={saveProduct} className="btn btn-outline-dark"> Save Product </button>
+                            </div>
+                            <div>
+                                <ul className="product-list">
+                                    {allProducts.map(prod => 
+                                        <li>
+                                            <img className="prod-img" src={prod.image} />
+                                            {prod.title} - ${parseFloat(prod.price).toFixed(2)}
+                                        </li>)}
+                                </ul>
                             </div>
                         </div>
                         <div className="img-create-products-container">
@@ -104,6 +121,11 @@ function Admin(){
 
                         <div className="mb-3 btn-container">
                             <button onClick={saveCoupon} className="btn btn-outline-dark">Save Coupon</button>
+                        </div>
+                        <div>
+                            <ul className="coupon-list">
+                                {allCoupons.map(cp => <li className="coupon-item">{cp.code} - {cp.discount}%</li>)}
+                            </ul>
                         </div>
                     </div>
                 </div>

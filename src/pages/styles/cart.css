@@ -47,3 +47,31 @@
     display: block;
     color: #5f5f5f;
 }
+
+.cart .parent {
+    display: flex;
+}
+
+.cart .list{
+    flex: 3;
+}
+
+.cart .side{
+    flex: 1;
+    background-color: white;
+    margin-right: 30px;
+    border: 1px solid #999494;
+    border-radius: 6px;
+    margin-top: 40px;
+    padding-top: 30px;
+}
+
+.cart .side h6{
+    font-size: 26px;
+    color: #6a6a6a;
+}
+
+.cart .side h5{
+    font-size: 28px;
+    color: green;
+}
