@@ -7,6 +7,7 @@
     width: 100%;
     align-items: center;
     justify-content: center;
+    align-items: flex-start;
 }
 
 
@@ -100,4 +101,7 @@
 .admin .product-list .prod-img{
     height: 60px;
     margin-right: 5px;
+}
+.admin .coupon-list{
+    margin-right: 35px;
 }

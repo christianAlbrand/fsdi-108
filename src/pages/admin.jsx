@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles/admin.css";
+import dataService from "../services/dataService";
+import { data } from "react-router-dom";
 
 
 function Admin(){
@@ -32,8 +34,10 @@ function Admin(){
 
         setCoupon(copy);
     }
-
     function saveCoupon(){
+
+        dataService.saveCoupon(coupon);
+
         var copy = [...allCoupons];
         copy.push(coupon);
         setAllCoupons(copy);
@@ -50,11 +54,32 @@ function Admin(){
         setProduct(copy);
     }
 
-    function saveProduct(){
+    async function saveProduct(){
+
+        let fixedProd = {...product};
+        fixedProd.price = parseFloat(fixedProd.price);
+        let x = await dataService.saveProduct(fixedProd);
+        console.log(x);
+
         var copy = [...allProducts];
         copy.push(product);
         setAllProducts(copy);
     }
+
+    async function loadProducts(){
+        let prods = await dataService.getProducts();
+        setAllProducts(prods);
+    }
+
+    async function loadCoupons(){
+        let cps = await dataService.getCoupons();
+        setAllCoupons(cps);
+    }
+
+    useEffect(() => {
+        loadCoupons();
+        loadProducts();
+    }, [])
 
 
     //create a handleProductInput fn
@@ -68,6 +93,7 @@ function Admin(){
             <div className="parent">
                 <div className="products form">
                     <h3>Create Products</h3>
+                    <hr />
                     <div className="products-container">
                         <div className="products-container-div">
                             <div className="mb-3">
@@ -109,6 +135,7 @@ function Admin(){
                 <div className="coupons-container">
                     <div className="coupons form">
                         <h3>Create Coupons</h3>
+                        <hr />
                         <div className="mb-3">
                             <label className="form-label">Code</label>
                             <input type="text" className="form-control" onBlur={handleCouponInput} name="code"/>

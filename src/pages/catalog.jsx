@@ -9,8 +9,8 @@ function Catalog(){
     const [categories, setCategories] = useState([])
     const [selectedCategory, setSelectedCategory] =useState("")
 
-    function loadData() {
-        let productList = dataService.getProducts();
+    async function loadData() {
+        let productList = await dataService.getProducts();
         let categoriesList = dataService.getCategories();
         setCatalog(productList);
         setCategories(categoriesList);

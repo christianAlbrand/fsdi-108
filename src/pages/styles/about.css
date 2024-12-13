@@ -5,3 +5,23 @@
 .about h3{
     color: darkcyan;
 }
+
+.about .about-text{
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about .about-text h4{
+    text-align: start;
+}
+
+.about .about-email{
+    border: 1px solid gray;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+

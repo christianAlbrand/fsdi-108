@@ -48,7 +48,6 @@ function Cart(){
                         </div>
                     )}
                 </div>
-
                 <div className="side">
                     <h6>Total</h6>
                     <h5>${getOrderTotal()}</h5>

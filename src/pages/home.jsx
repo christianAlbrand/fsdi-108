@@ -7,7 +7,7 @@ function Home(){
             <div className="relative">
                 <img className="main-img" src="./images/nature-bckgr.jpg" alt="" />
                 <div className="over-img-welcome">
-                    <h1>Welcome to Organika Store Home page!</h1>
+                    <h1>Welcome to Green Nature Home page!</h1>
                 </div>
                 <div className="over-img-txt">
                     <h2>Taste The Pure Nature Form</h2>

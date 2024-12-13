@@ -14,12 +14,13 @@
     position: absolute;
     left: 10px;
     top: 5px;
-    color: rgba(0, 0, 0, 0.548);
+    color: rgba(0, 0, 0, 0.418);
 }
 
 .product img {
     height: 200px;
     width: 200px;
+    margin-top: 27px;
 }
 
 .product h3{
